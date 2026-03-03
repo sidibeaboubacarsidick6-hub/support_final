@@ -21,6 +21,7 @@ def soumettre_ticket(request):
         
         # On récupère les données du formulaire
         client_nom = request.POST.get('client')
+        phone_number = request.POST.get('telephone')
         produit_nom = request.POST.get('produit')
         type_pb = request.POST.get('type_probleme')
         suggestions = request.POST.get('suggestions_autre')
@@ -29,6 +30,7 @@ def soumettre_ticket(request):
         ticket = Ticket(
             numero_ticket=num_ticket,
             client=client_nom,
+            telephone=phone_number,
             produit=produit_nom,
             type_probleme=type_pb,
             suggestions_autre=suggestions,
