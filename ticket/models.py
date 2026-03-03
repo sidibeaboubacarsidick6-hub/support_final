@@ -38,6 +38,7 @@ class Ticket(models.Model):
 
     numero_ticket = models.CharField(max_length=20, unique=True)
     client = models.CharField(max_length=100)
+    telephone = models.CharField(max_length=20, verbose_name="Numéro de téléphone", null=True, blank=True)
     description = models.TextField()
     priorite = models.CharField(max_length=10, choices=PRIORITY_CHOICES, default='MOYENNE')
     statut = models.CharField(max_length=10, choices=STATUS_CHOICES, default='OUVERT')
